@@ -68,7 +68,7 @@ def get_aqi(latitude, longitude):
     return get_aqi_owm(latitude, longitude)
 
 db.connect()
-db.create_tables([Record])
+db.create_tables([Record, AQI])
 
 def getLatestRecord():
     #User.select().order_by(User.id.desc()).get()

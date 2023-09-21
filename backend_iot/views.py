@@ -1,15 +1,18 @@
 from backend_iot import app
 from backend_iot.db import getLatestRecord, addRecord, get_aqi
 from flask import request, redirect, render_template, abort
+from playhouse.shortcuts import model_to_dict
 from datetime import datetime
 
 current_latitude, current_longitude = 45.46437891252755, 7.872049153560152
 
 def update_record(record):
-    record["latitude"] = current_latitude
-    record["longitude"] = current_longitude
-    record["timestamp"] = datetime.now()
-    record["aqi"] = get_aqi(current_latitude, current_longitude)
+    record.update()
+    record.latitude = current_latitude
+    record.longitude = current_longitude
+    record.timestamp = datetime.now()
+    record.aqi = get_aqi(current_latitude, current_longitude)
+    return record
 
 def latest_or_abort():
     latest = getLatestRecord()
@@ -40,5 +43,8 @@ def data_route():
             continue
         latest[key] = form[key]
 
-    update_record(latest)
-    addRecord(**latest)
+    new_record = update_record(latest)
+    temp = model_to_dict(new_record)
+    del temp["id"]
+    addRecord(**temp)
+    return temp
