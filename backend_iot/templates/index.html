@@ -91,12 +91,6 @@
               <div class="text-wrapper-6" onclick="setPower(this)">OFF</div>
             </div>
           </div>
-          <div class="group-6">
-            <div class="overlap-5"><div class="text-wrapper-4"></div></div>
-          </div>
-          <div class="group-7">
-            <div class="overlap-5"><div class="text-wrapper-4"></div></div>
-          </div>
         </div>
         <div class="group-5">
           <div class="overlap-7">
@@ -114,7 +108,7 @@
         var temperature = element.innerText.trim().replace('°','');
         console.log('Temperatura selezionata:', temperature);
 
-        tosend= {'t_in': temperature}
+        tosend= {'t_setpoint': temperature}
         console.log("Post: ",tosend);
         postData(tosend);
       }
