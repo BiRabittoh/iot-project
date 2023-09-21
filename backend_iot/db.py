@@ -1,5 +1,7 @@
 from peewee import Model, IntegerField, DateTimeField, DoesNotExist, FloatField, BooleanField
 from playhouse.sqliteq import SqliteQueueDatabase
+from playhouse.shortcuts import model_to_dict
+from backend_iot.common import current_latitude, current_longitude
 from backend_iot.api import get_aqi_owm
 from datetime import datetime, timedelta
 
@@ -70,12 +72,37 @@ def get_aqi(latitude, longitude):
 db.connect()
 db.create_tables([Record, AQI])
 
-def getLatestRecord():
-    #User.select().order_by(User.id.desc()).get()
+def get_latest_record():
     try:
         return Record.select().order_by(Record.timestamp.desc()).get()
     except DoesNotExist:
-        return addRecord()
+        return add_record()
 
-def addRecord(**info):
+def add_record(**info):
     return Record.create(**info)
+
+def update_record(record):
+    record["latitude"] = current_latitude
+    record["longitude"] = current_longitude
+    record["timestamp"] = datetime.now()
+    record["aqi"] = get_aqi(current_latitude, current_longitude)
+    return record
+
+def record_to_dict(record):
+    temp = model_to_dict(record)
+    del temp["id"]
+    return temp
+
+def handle_new_data(form):
+    latest = record_to_dict(get_latest_record())
+
+    for key in form.keys():
+        if key not in latest.keys():
+            continue
+        if key == "fan_speed" and latest["auto"]:
+            continue
+        latest[key] = form[key]
+
+    new_record = update_record(latest)
+    add_record(**new_record)
+    return new_record

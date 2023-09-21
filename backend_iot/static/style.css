@@ -1,0 +1,450 @@
+.surface-pro {
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.surface-pro .div {
+  background-color: #000000;
+  width: 1440px;
+  height: 960px;
+  position: relative;
+}
+
+.surface-pro .overlap {
+  position: absolute;
+  width: 288px;
+  height: 105px;
+  top: 0;
+  left: 288px;
+  background-color: #000000;
+}
+
+.surface-pro .text {
+  top: 27px;
+  left: 77px;
+  color: #ffffff;
+  font-size: 40px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.surface-pro .text-wrapper {
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+}
+
+.surface-pro .span {
+  font-size: 20px;
+}
+
+.surface-pro .overlap-group {
+  position: absolute;
+  width: 288px;
+  height: 105px;
+  top: 0;
+  left: 864px;
+  background-color: #000000;
+}
+
+.surface-pro .AQI-int {
+  left: 94px;
+  position: absolute;
+  top: 27px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.surface-pro .rectangle {
+  position: absolute;
+  width: 288px;
+  height: 12px;
+  top: 93px;
+  left: 0;
+  background-color: #b51010;
+}
+
+.surface-pro .overlap-2 {
+  position: absolute;
+  width: 288px;
+  height: 105px;
+  top: 0;
+  left: 1152px;
+  background-color: #000000;
+}
+
+.surface-pro .AQI-ext {
+  left: 87px;
+  position: absolute;
+  top: 27px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.surface-pro .rectangle-2 {
+  position: absolute;
+  width: 288px;
+  height: 12px;
+  top: 93px;
+  left: 0;
+  background-color: #fab639;
+}
+
+.surface-pro .group {
+  position: absolute;
+  width: 280px;
+  height: 532px;
+  top: 190px;
+  left: 576px;
+  background-image: url(./img/volvo-concept-26-interior-06-768x405-1.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.surface-pro .overlap-3 {
+  position: absolute;
+  width: 172px;
+  height: 239px;
+  top: 332px;
+  left: 297px;
+}
+
+.surface-pro .vector {
+  position: absolute;
+  width: 49px;
+  height: 49px;
+  top: 100px;
+  left: 123px;
+}
+
+.surface-pro .overlap-wrapper {
+  position: absolute;
+  width: 138px;
+  height: 239px;
+  top: 0;
+  left: 0;
+}
+
+.surface-pro .overlap-group-2 {
+  position: relative;
+  height: 239px;
+}
+
+.surface-pro .frame-wrapper {
+  position: absolute;
+  width: 112px;
+  height: 221px;
+  top: 10px;
+  left: 18px;
+}
+
+.surface-pro .frame {
+  position: relative;
+  height: 221px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.surface-pro .element {
+  top: -310px;
+  left: 34px;
+  color: transparent;
+  font-size: 64px;
+  position: absolute;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.surface-pro .text-wrapper-2 {
+  color: #000000;
+}
+
+.surface-pro .text-wrapper-3 {
+  color: #ffffff;
+}
+
+.surface-pro .rectangle-3 {
+  position: absolute;
+  width: 138px;
+  height: 79px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 31.25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.surface-pro .rectangle-4 {
+  position: absolute;
+  width: 138px;
+  height: 79px;
+  top: 160px;
+  left: 0;
+  transform: rotate(-180deg);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 31.25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.surface-pro .rectangle-5 {
+  position: absolute;
+  width: 138px;
+  height: 79px;
+  top: 0;
+  left: 9px;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 31.25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.surface-pro .rectangle-6 {
+  position: absolute;
+  width: 138px;
+  height: 79px;
+  top: 160px;
+  left: 9px;
+  transform: rotate(-180deg);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 31.25%, rgba(0, 0, 0, 0) 100%);
+}
+
+.surface-pro .overlap-group-wrapper {
+  position: absolute;
+  width: 138px;
+  height: 239px;
+  top: 332px;
+  left: 110px;
+}
+
+.surface-pro .div-wrapper {
+  position: absolute;
+  width: 112px;
+  height: 221px;
+  top: 10px;
+  left: 13px;
+}
+
+.surface-pro .p {
+  width: 109px;
+  top: -88px;
+  left: 1px;
+  color: transparent;
+  font-size: 64px;
+  position: absolute;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  color: white;
+}
+
+.surface-pro .tint {
+  position: absolute;
+  top: 27px;
+  left: 84px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.surface-pro .overlap-4 {
+  position: absolute;
+  width: 885px;
+  height: 152px;
+  top: 808px;
+  left: 0;
+}
+
+.surface-pro .group-2 {
+  position: absolute;
+  width: 290px;
+  height: 105px;
+  top: 47px;
+  left: 288px;
+}
+
+.surface-pro .overlap-5 {
+  position: relative;
+  width: 288px;
+  height: 105px;
+  background-color: #000000;
+}
+
+.surface-pro .text-wrapper-4 {
+  position: absolute;
+  width: 288px;
+  top: 29px;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.surface-pro .group-3 {
+  position: absolute;
+  width: 290px;
+  height: 105px;
+  top: 47px;
+  left: 0;
+}
+
+.surface-pro .group-4 {
+  position: absolute;
+  width: 326px;
+  height: 127px;
+  top: 0;
+  left: 559px;
+}
+
+.surface-pro .overlap-6 {
+  position: relative;
+  width: 322px;
+  height: 127px;
+  background-color: #000000;
+  border-radius: 35px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.surface-pro .overlap-group-3 {
+  position: absolute;
+  width: 161px;
+  height: 127px;
+  top: 0;
+  left: 0;
+  background-image: url(./img/tasto-ricircolo.svg);
+  background-size: 100% 100%;
+}
+
+.surface-pro .text-wrapper-5 {
+  position: absolute;
+  width: 161px;
+  top: 37px;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.surface-pro .text-wrapper-6 {
+  position: absolute;
+  width: 161px;
+  top: 36px;
+  left: 160px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.surface-pro .group-5 {
+  position: absolute;
+  width: 387px;
+  height: 357px;
+  top: 273px;
+  left: 944px;
+}
+
+.surface-pro .overlap-7 {
+  position: relative;
+  width: 385px;
+  height: 357px;
+  background-color: #000000;
+}
+
+.surface-pro .text-wrapper-7 {
+  position: absolute;
+  top: 111px;
+  left: 153px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.surface-pro .rectangle-7 {
+  position: absolute;
+  width: 154px;
+  height: 61px;
+  top: 183px;
+  left: 109px;
+  background-color: #ffffff;
+  border-radius: 22px;
+}
+
+.surface-pro .img {
+  position: absolute;
+  width: 117px;
+  height: 52px;
+  top: 188px;
+  left: 124px;
+}
+
+.surface-pro .ellipse {
+  position: absolute;
+  width: 315px;
+  height: 315px;
+  top: 21px;
+  left: 29px;
+  border-radius: 157.5px;
+  border: 30px solid;
+  border-color: #ff1616;
+  filter: blur(30px);
+}
+
+.surface-pro .ellipse-2 {
+  position: absolute;
+  width: 291px;
+  height: 291px;
+  top: 33px;
+  left: 41px;
+  border-radius: 145.5px;
+  border: 6px solid;
+  border-color: #ffffff;
+  backdrop-filter: blur(50px) brightness(100%);
+  -webkit-backdrop-filter: blur(50px) brightness(100%);
+}
+
+
+.frame::-webkit-scrollbar {
+  display: none;
+}

@@ -1,1 +1,219 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/globals.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="surface-pro">
+      <div class="div">
+        <div class="overlap">
+          <p class="text">
+            <span class="text-wrapper">T</span>
+            <span class="span">ext</span>
+            <span class="text-wrapper" id="t_out"> 25°</span>
+          </p>
+        </div>
+        <div class="overlap-group">
+          <p class="AQI-int"><span class="text-wrapper">AQI int</span> <span class="span" id="aqi_in">0</span></p>
+          <div class="rectangle"></div>
+        </div>
+        <div class="overlap-2">
+          <p class="AQI-ext"><span class="text-wrapper">AQI </span> <span class="span" id="aqi_ext">0</span></p>
+          <div class="rectangle-2"></div>
+        </div>
+        <div class="group"></div>
+        <div class="overlap-3">
+          <img class="vector" src="/static/img/vector.svg" />
+          <div class="overlap-wrapper">
+            <div class="overlap-group-2">
+              <div class="frame-wrapper">
+                <div class="frame">
+                  <p class="p">
+                    <span class="text-wrapper-2">.<br />.<br /></span>
+                    <span id="speed-4" class="text-wrapper-3" onclick="setFanSpeed(this)">4<br /></span>
+                    <span id="speed-3" class="text-wrapper-3" onclick="setFanSpeed(this)">3<br /></span>
+                    <span id="speed-2" class="text-wrapper-3" onclick="setFanSpeed(this)">2<br /></span>
+                    <span id="speed-1" class="text-wrapper-3" onclick="setFanSpeed(this)">1<br /></span>
+                    <span class="text-wrapper-2">.<br /></span>
+                  </p>
+                </div>
+              </div>
+              <div class="rectangle-3"></div>
+              <div class="rectangle-4"></div>
+            </div>
+          </div>
+          <div class="rectangle-5"></div>
+          <div class="rectangle-6"></div>
+        </div>
+        <div class="overlap-group-wrapper">
+          <div class="overlap-group-2">
+            <div class="div-wrapper">
+              <div class="frame">
+                <p class="p">
+                  <span id="temp-28" class="text-wrapper-3">.<br /></span>
+                  <span id="temp-28" class="text-wrapper-3">.<br /></span>
+                  <span id="temp-28" class="text-wrapper-3" onclick="setTarget(this)">28°<br /></span>
+                  <span id="temp-27" class="text-wrapper-3" onclick="setTarget(this)">27°<br /></span>
+                  <span id="temp-26" class="text-wrapper-3" onclick="setTarget(this)">26°<br /></span>
+                  <span id="temp-25" class="text-wrapper-3" onclick="setTarget(this)">25°<br /></span>
+                  <span id="temp-24" class="text-wrapper-3" onclick="setTarget(this)">24°<br /></span>
+                  <span id="temp-23" class="text-wrapper-3" onclick="setTarget(this)">23°<br /></span>
+                  <span id="temp-22" class="text-wrapper-3" onclick="setTarget(this)">22°<br /></span>
+                  <span id="temp-21" class="text-wrapper-3" onclick="setTarget(this)">21°<br /></span>
+                  <span id="temp-20" class="text-wrapper-3" onclick="setTarget(this)">20°<br /></span>
+                  <span id="temp-19" class="text-wrapper-3" onclick="setTarget(this)">19°<br /></span>
+                  <span id="temp-18" class="text-wrapper-3" onclick="setTarget(this)">18°<br /></span>
+                  <span id="temp-28" class="text-wrapper-3">.<br /></span>
+                  <span id="temp-28" class="text-wrapper-3">.<br /></span>
+              </p>
+              </div>
+            </div>
+            <div class="rectangle-3"></div>
+            <div class="rectangle-4"></div>
+          </div>
+        </div>
+        <p class="tint">
+          <span class="text-wrapper">T</span>
+          <span class="span">int</span>
+          <span class="text-wrapper" id="t_in">22°</span>
+        </p>
+        <div class="overlap-4">
+          <div class="group-2">
+            <div class="overlap-5"><div class="text-wrapper-4">AUTO</div></div>
+          </div>
+          <div class="group-3">
+            <div class="overlap-5"><div class="text-wrapper-4">MANUAL</div></div>
+          </div>
+          <div class="group-4">
+            <div class="overlap-6">
+              <div class="overlap-group-3"><div class="text-wrapper-5" onclick="setPower(this)">ON</div></div>
+              <div class="text-wrapper-6" onclick="setPower(this)">OFF</div>
+            </div>
+          </div>
+          <div class="group-6">
+            <div class="overlap-5"><div class="text-wrapper-4"></div></div>
+          </div>
+          <div class="group-7">
+            <div class="overlap-5"><div class="text-wrapper-4"></div></div>
+          </div>
+        </div>
+        <div class="group-5">
+          <div class="overlap-7">
+            <div class="text-wrapper-7">AQI</div>
+            <div class="rectangle-7"></div>
+            <img class="img" src="/static/img/vector-1.svg" />
+            <div class="ellipse"></div>
+            <div class="ellipse-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function setTarget(element) {
+        var temperature = element.innerText.trim().replace('°','');
+        console.log('Temperatura selezionata:', temperature);
+
+        tosend= {'t_in': temperature}
+        console.log("Post: ",tosend);
+        postData(tosend);
+      }
+
+      function setPower(element) {
+        var power = element.innerText.trim();
+        if (power =="ON")
+          power = 1;
+        else power = 0;
+        tosend = {'power': power}
+        console.log('Accensione: :', power);
+        postData(tosend)
+      }
+
+      function setFanSpeed(element) {
+        var speed = element.innerText.trim();
+        switch (speed){
+          case "1":
+            speed = 500;
+            break;
+          case "2":
+            speed = 1000;
+            break;
+          case "3":
+            speed = 2000;
+            break;
+          case "4":
+            speed = 3000;
+            break;
+        }
+        tosend = {'fan_speed': speed}
+        console.log('Fan_speed: :', tosend);
+        postData(tosend)
+      }
+
+      function setAuto(element) {
+        var attivazione = element.innerText.trim();
+        if(attivazione == "MANUAL")
+          attivazione = 0;
+        else
+          attivazione = 1;
+        tosend = {'auto': attivazione}
+        console.log('Auto/Man selezionato:', attivazione);
+        postData(tosend)
+      }
+
+    
+      function postData(data) {
+        let formBody = [];
+        for (var property in data) {
+          var encodedKey = encodeURIComponent(property);
+          var encodedValue = encodeURIComponent(data[property]);
+          formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
+
+        fetch('http://localhost:1111/data', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: formBody
+        })
+      }
+
+      
+      async function getData() {
+        const response = await fetch('http://localhost:1111/data')
+        console.log(response);
+        const data= await response.json();
+        console.log(data);
+        
+        switch(data) {
+          case data.t_in:
+            document.getElementById("t_in").innerHTML = data[1];
+            break;
+          case "t_out":
+            document.getElementById("t_out").innerHTML = data[1];
+            break;
+          case "aqi":
+            document.getElementById("aqi_ext").innerHTML = data[1];
+            break;
+          case "aqi_in":
+            document.getElementById("aqi_in").innerHTML = data[1];
+            break;
+          case "air_flow":
+            break;
+          case "fan_speed":
+            document.getElementById("aqi_in").innerHTML = data[1];
+            break;
+        }
+        window.addEventListener('load', function () {
+              // Your document is loaded.
+              var fetchInterval = 5000; // 5 seconds.
+
+              // Invoke the request every 5 seconds.
+              setInterval(getData, fetchInterval);
+        });
+    }
+    </script>
+  </body>
+</html>
