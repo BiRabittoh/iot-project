@@ -14,21 +14,21 @@ class BaseModel(Model):
 
 class Record(BaseModel):
     timestamp = DateTimeField(default=datetime.now)
-    latitude = FloatField()
-    longitude = FloatField()
-    aqi = IntegerField()
-    t_in = FloatField()
-    t_out = FloatField()
-    t_setpoint = FloatField()
-    fan_speed = IntegerField()
-    power = BooleanField()
-    auto = BooleanField()
-    co_in = FloatField()
-    co_out = FloatField()
-    no2_in = FloatField()
-    pm10_out = FloatField()
-    airflow = IntegerField()
-    aq_in = IntegerField()
+    latitude = FloatField(default=0)
+    longitude = FloatField(default=0)
+    aqi = IntegerField(default=0)
+    t_in = FloatField(default=0)
+    t_out = FloatField(default=0)
+    t_setpoint = FloatField(default=0)
+    fan_speed = IntegerField(default=0)
+    power = BooleanField(default=False)
+    auto = BooleanField(default=False)
+    co_in = FloatField(default=0)
+    co_out = FloatField(default=0)
+    no2_in = FloatField(default=0)
+    pm10_out = FloatField(default=0)
+    airflow = IntegerField(default=0)
+    aq_in = IntegerField(default=0)
 
 class AQI(BaseModel):
     timestamp = DateTimeField(default=datetime.now)
@@ -75,7 +75,7 @@ def getLatestRecord():
     try:
         return Record.select().order_by(Record.timestamp.desc()).get()
     except DoesNotExist:
-        return None
+        return addRecord()
 
 def addRecord(**info):
-    Record.create(**info)
+    return Record.create(**info)

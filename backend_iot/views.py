@@ -21,10 +21,6 @@ def latest_or_abort():
 def index_route():
     if request.method == 'GET':
         return render_template("index.html")
-    
-    form = request.form
-    update_record(form)
-    addRecord(**form)
 
 editable_fields = ["t_target", "power", "fan_speed", "auto", "airflow"]
 
