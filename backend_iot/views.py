@@ -1,16 +1,15 @@
 from backend_iot import app
-from backend_iot.db import getLatestRecord, addRecord
-from backend_iot.api import get_aqi
+from backend_iot.db import getLatestRecord, addRecord, get_aqi
 from flask import request, redirect, render_template, abort
 from datetime import datetime
+
+current_latitude, current_longitude = 45.46437891252755, 7.872049153560152
 
 def update_record(record):
     record["latitude"] = current_latitude
     record["longitude"] = current_longitude
     record["timestamp"] = datetime.now()
-
-current_latitude = 30.3
-current_longitude = 40.4
+    record["aqi"] = get_aqi(current_latitude, current_longitude)
 
 def latest_or_abort():
     latest = getLatestRecord()
@@ -21,7 +20,7 @@ def latest_or_abort():
 @app.route("/")
 def index_route():
     if request.method == 'GET':
-        return latest_or_abort()
+        return render_template("index.html")
     
     form = request.form
     update_record(form)
