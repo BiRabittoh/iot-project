@@ -14,11 +14,16 @@ def update_record(record):
     record.aqi = get_aqi(current_latitude, current_longitude)
     return record
 
+def record_to_dict(record):
+    temp = model_to_dict(record)
+    del temp["id"]
+    return temp
+
 def latest_or_abort():
     latest = getLatestRecord()
     if latest is None:
         return abort(400)
-    return latest
+    return record_to_dict(latest)
 
 @app.route("/")
 def index_route():
@@ -44,7 +49,6 @@ def data_route():
         latest[key] = form[key]
 
     new_record = update_record(latest)
-    temp = model_to_dict(new_record)
-    del temp["id"]
+    temp = record_to_dict(new_record)
     addRecord(**temp)
     return temp
